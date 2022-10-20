@@ -18,6 +18,9 @@
 		67EEB5DA2901447800450770 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 67EEB5D92901447800450770 /* Then */; };
 		67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5DC29015A6B00450770 /* APIKey.swift */; };
 		67EEB5DF29017DE300450770 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5DE29017DE300450770 /* APIManager.swift */; };
+		67EEB5E129018E0200450770 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5E029018E0200450770 /* APIError.swift */; };
+		67EEB5E42901959600450770 /* CookRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5E32901959600450770 /* CookRecipe.swift */; };
+		67EEB5E7290199FF00450770 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5E6290199FF00450770 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		67EEB5D32901444900450770 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		67EEB5DC29015A6B00450770 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		67EEB5DE29017DE300450770 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		67EEB5E029018E0200450770 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		67EEB5E32901959600450770 /* CookRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookRecipe.swift; sourceTree = "<group>"; };
+		67EEB5E6290199FF00450770 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 		67EEB5B92901403000450770 /* CookRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				67EEB5E6290199FF00450770 /* Observable.swift */,
+				67EEB5E22901958000450770 /* Model */,
 				67EEB5DB29015A5A00450770 /* API */,
 				67EEB5D02901429900450770 /* Presentation */,
 				67EEB5CF2901408200450770 /* Application */,
@@ -108,8 +116,17 @@
 			children = (
 				67EEB5DC29015A6B00450770 /* APIKey.swift */,
 				67EEB5DE29017DE300450770 /* APIManager.swift */,
+				67EEB5E029018E0200450770 /* APIError.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		67EEB5E22901958000450770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67EEB5E32901959600450770 /* CookRecipe.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +212,11 @@
 				67EEB5D2290142B500450770 /* MainViewController.swift in Sources */,
 				67EEB5D42901444900450770 /* MainView.swift in Sources */,
 				67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */,
+				67EEB5E7290199FF00450770 /* Observable.swift in Sources */,
 				67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */,
 				67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */,
+				67EEB5E129018E0200450770 /* APIError.swift in Sources */,
+				67EEB5E42901959600450770 /* CookRecipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
