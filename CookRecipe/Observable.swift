@@ -6,3 +6,26 @@
 //
 
 import Foundation
+
+class Observalble<T> {
+    
+    typealias completion = (T) -> Void
+    
+    private var listerner: (completion)?
+    
+    var value: T {
+        didSet {
+            listerner?(value)
+        }
+    }
+    
+    init(_ value: T) {
+        self.value = value
+    }
+    
+    func bind(_ closure: @escaping completion) {
+        closure(value)
+        listerner = closure
+    }
+}
+

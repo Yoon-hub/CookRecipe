@@ -49,7 +49,7 @@ class APIManager {
                     let result = try JSONDecoder().decode(CookRecipe.self, from: data)
                     completion(result, nil)
                 } catch {
-                    print(error)
+                    //print(error)
                     completion(nil, .invalidData)
                 }
             }
