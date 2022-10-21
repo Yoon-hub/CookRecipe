@@ -14,6 +14,14 @@ final class MainView: UIView {
     
     let searchBar = UISearchBar()
     
+    var collectionView: UICollectionView = {
+        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+        let layout = UICollectionViewCompositionalLayout.list(using: config)
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -29,13 +37,17 @@ extension MainView {
     
     private func configure() {
         self.backgroundColor = .white
-        self.addSubview(searchBar)
+        [searchBar, collectionView].forEach { self.addSubview($0)}
     }
     
     private func setConstraints() {
         searchBar.snp.makeConstraints {
             $0.height.equalTo(44)
             $0.leading.trailing.top.equalTo(self.safeAreaLayoutGuide)
+        }
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
     

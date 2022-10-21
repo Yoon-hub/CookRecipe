@@ -15,7 +15,6 @@
 		67EEB5D2290142B500450770 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5D1290142B500450770 /* MainViewController.swift */; };
 		67EEB5D42901444900450770 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5D32901444900450770 /* MainView.swift */; };
 		67EEB5D72901446C00450770 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67EEB5D62901446C00450770 /* SnapKit */; };
-		67EEB5DA2901447800450770 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 67EEB5D92901447800450770 /* Then */; };
 		67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5DC29015A6B00450770 /* APIKey.swift */; };
 		67EEB5DF29017DE300450770 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5DE29017DE300450770 /* APIManager.swift */; };
 		67EEB5E129018E0200450770 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5E029018E0200450770 /* APIError.swift */; };
@@ -48,7 +47,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67EEB5D72901446C00450770 /* SnapKit in Frameworks */,
-				67EEB5DA2901447800450770 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				67EEB5D1290142B500450770 /* MainViewController.swift */,
-				67EEB5D32901444900450770 /* MainView.swift */,
 				67EEB5E92901A74800450770 /* MainVIewModel.swift */,
+				67EEB5D32901444900450770 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -158,7 +156,6 @@
 			name = CookRecipe;
 			packageProductDependencies = (
 				67EEB5D62901446C00450770 /* SnapKit */,
-				67EEB5D92901447800450770 /* Then */,
 			);
 			productName = CookRecipe;
 			productReference = 67EEB5B72901403000450770 /* CookRecipe.app */;
@@ -190,7 +187,6 @@
 			mainGroup = 67EEB5AE2901403000450770;
 			packageReferences = (
 				67EEB5D52901446C00450770 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				67EEB5D82901447800450770 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 67EEB5B82901403000450770 /* Products */;
 			projectDirPath = "";
@@ -456,14 +452,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		67EEB5D82901447800450770 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -471,11 +459,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 67EEB5D52901446C00450770 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		67EEB5D92901447800450770 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 67EEB5D82901447800450770 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

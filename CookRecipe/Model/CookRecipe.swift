@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - CookRecipe
-struct CookRecipe: Codable {
+struct CookRecipe: Codable, Hashable {
     let cookrcp01: Cookrcp01
 
     enum CodingKeys: String, CodingKey {
@@ -17,7 +17,7 @@ struct CookRecipe: Codable {
 }
 
 // MARK: - Cookrcp01
-struct Cookrcp01: Codable {
+struct Cookrcp01: Codable, Hashable {
     let totalCount: String
     let row: [[String: String]]
     let result: Result
@@ -30,7 +30,7 @@ struct Cookrcp01: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Result: Codable, Hashable {
     let msg, code: String
 
     enum CodingKeys: String, CodingKey {
