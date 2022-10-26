@@ -28,7 +28,6 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationConfigure()
-        configure()
         cellRegiste()
         registBind()
         subscribeSearchBar()
@@ -40,10 +39,6 @@ extension MainViewController {
     
     private func navigationConfigure() {
         self.navigationItem.title = "레시피 검색"
-    }
-    
-    private func configure() {
-       // mainView.searchBar.delegate = self
     }
     
     private func registBind() {
@@ -71,7 +66,7 @@ extension MainViewController {
             .debounce(.seconds(2), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .withUnretained(self)
-            .subscribe { vc, value in
+            .bind { vc, value in
                 print(value)
                 vc.viewModel.requestRecipe(text: value)
             }
@@ -79,18 +74,6 @@ extension MainViewController {
     }
 }
 
-
-//MARK: - searchbarDelegate
-//extension MainViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        viewModel.requestRecipe(text: searchBar.text!) { [unowned self] in
-//            let alert = UIAlertController(title: "", message: "검색하신 레시피가 없습니다.", preferredStyle: .alert)
-//            let ok = UIAlertAction(title: "확인", style: .cancel)
-//            alert.addAction(ok)
-//            self.present(alert, animated: true)
-//        }
-//    }
-//}
 
 //MARK: - collectionView
 extension MainViewController {
