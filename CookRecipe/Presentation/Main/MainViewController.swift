@@ -7,6 +7,9 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 final class MainViewController: UIViewController {
     
     let mainView = MainView()
@@ -14,6 +17,8 @@ final class MainViewController: UIViewController {
     let viewModel = MainViewModel()
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, [String:String]>!
+    
+    var dispoasBag = DisposeBag()
     
     //vc Lifecycle
     override func loadView() {
@@ -26,6 +31,7 @@ final class MainViewController: UIViewController {
         configure()
         cellRegiste()
         registBind()
+        subscribeSearchBar()
     }
 }
 
@@ -37,30 +43,54 @@ extension MainViewController {
     }
     
     private func configure() {
-        mainView.searchBar.delegate = self
+       // mainView.searchBar.delegate = self
     }
     
     private func registBind() {
-        viewModel.recipeList.bind { cookRecipe in
-            var snapshot = NSDiffableDataSourceSnapshot<Int, [String:String]>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(cookRecipe.cookrcp01.row)
-            self.dataSource.apply(snapshot)
-        }
+        viewModel.recipeList
+            .subscribe(onNext: { cookRecipe in
+                var snapshot = NSDiffableDataSourceSnapshot<Int, [String:String]>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(cookRecipe.cookrcp01.row)
+                self.dataSource.apply(snapshot)
+            }, onError: { error in
+                let alert = UIAlertController(title: "", message: "검색하신 레시피가 없습니다.", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .cancel)
+                alert.addAction(ok)
+                self.present(alert, animated: true)
+            })
+            .disposed(by: dispoasBag) // 한번 실패하면 error가 발생하고 disposed 되버려서 다시 실행이 안된다
     }
 }
 
-//MARK: - searchbar
-extension MainViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.requestRecipe(text: searchBar.text!) { [unowned self] in
-            let alert = UIAlertController(title: "", message: "검색하신 레시피가 없습니다.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(ok)
-            self.present(alert, animated: true)
-        }
-    }   
+//MARK: - searchBar RxCocoa
+
+extension MainViewController {
+    func subscribeSearchBar() {
+        mainView.searchBar.rx.text.orEmpty
+            .debounce(.seconds(2), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .subscribe { vc, value in
+                print(value)
+                vc.viewModel.requestRecipe(text: value)
+            }
+            .disposed(by: dispoasBag)
+    }
 }
+
+
+//MARK: - searchbarDelegate
+//extension MainViewController: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        viewModel.requestRecipe(text: searchBar.text!) { [unowned self] in
+//            let alert = UIAlertController(title: "", message: "검색하신 레시피가 없습니다.", preferredStyle: .alert)
+//            let ok = UIAlertAction(title: "확인", style: .cancel)
+//            alert.addAction(ok)
+//            self.present(alert, animated: true)
+//        }
+//    }
+//}
 
 //MARK: - collectionView
 extension MainViewController {
@@ -89,5 +119,5 @@ extension MainViewController {
         }
     }
     
- 
+    
 }
