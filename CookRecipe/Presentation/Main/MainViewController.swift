@@ -32,6 +32,7 @@ final class MainViewController: UIViewController {
         cellRegiste()
         subscirbe()
         subscribeSearchBar()
+        cellSelected()
     }
 }
 
@@ -41,7 +42,7 @@ extension MainViewController {
     private func navigationConfigure() {
         self.navigationItem.title = "레시피 검색"
     }
-    
+    			
     private func subscirbe() {
         viewModel.recipeList
             .subscribe(onNext: { [weak self] cookRecipe in
@@ -82,8 +83,8 @@ extension MainViewController {
     private func cellRegiste() {
         let cellRegisteration = UICollectionView.CellRegistration<MainCollectionViewCell, [String:String]> { cell, indexPath, itemIdentifier in
             
-            cell.titleLabel.text = itemIdentifier["RCP_NM"]
-            let url = URL(string: itemIdentifier["ATT_FILE_NO_MAIN"]!)
+            cell.titleLabel.text = itemIdentifier[RowDictionary.title.rawValue]
+            let url = URL(string: itemIdentifier[RowDictionary.image.rawValue]!)
             cell.imageView.kf.setImage(with: url)
         }
         
@@ -93,5 +94,16 @@ extension MainViewController {
         }
     }
     
-    
+    private func cellSelected() {
+        mainView.collectionView.rx
+            .itemSelected
+            .bind { [weak self] in
+                guard let item = self?.dataSource.itemIdentifier(for: $0) else { return }
+                let vc = DetailViewController()
+                vc.dic = item
+                self?.transition(vc, transitionStyle: .navigation)
+                //dump(item)
+            }
+            .disposed(by: dispoasBag)
+    }
 }

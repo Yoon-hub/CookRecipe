@@ -15,7 +15,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = .systemFont(ofSize: 14)
+        view.font = .boldSystemFont(ofSize: 16)
         return view
     }()
     
@@ -45,7 +45,8 @@ class MainCollectionViewCell: UICollectionViewCell {
     func setConstraints() {
         
         imageView.snp.makeConstraints {
-            $0.width.height.equalTo(88)
+            $0.height.equalTo(88)
+            $0.width.equalTo(88)
             $0.centerY.equalTo(self)
             $0.leading.equalTo(self).offset(20)
         }

@@ -13,23 +13,10 @@ final class MainView: UIView {
     
     let searchBar = UISearchBar()
     
-    var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
 //        let config = UICollectionLayoutListConfiguration(appearance: .plain)
 //        let layout = UICollectionViewCompositionalLayout.list(using: config)
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                             heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-      
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .absolute(120))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                         subitems: [item])
-      
-        let section = NSCollectionLayoutSection(group: group)
-
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-
+        let view = UICollectionView(frame: .zero, collectionViewLayout: self.compositionalLayout())
         return view
     }()
     
@@ -60,6 +47,21 @@ extension MainView {
             $0.top.equalTo(searchBar.snp.bottom)
             $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
+    }
+    
+    private func compositionalLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                             heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+      
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .absolute(100))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                         subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
     }
     
 }
