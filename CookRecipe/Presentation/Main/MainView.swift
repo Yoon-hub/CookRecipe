@@ -14,8 +14,20 @@ final class MainView: UIView {
     let searchBar = UISearchBar()
     
     var collectionView: UICollectionView = {
-        let config = UICollectionLayoutListConfiguration(appearance: .plain)
-        let layout = UICollectionViewCompositionalLayout.list(using: config)
+//        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+//        let layout = UICollectionViewCompositionalLayout.list(using: config)
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                             heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+      
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .absolute(120))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                         subitems: [item])
+      
+        let section = NSCollectionLayoutSection(group: group)
+
+        let layout = UICollectionViewCompositionalLayout(section: section)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
         return view

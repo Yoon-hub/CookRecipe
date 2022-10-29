@@ -11,15 +11,14 @@ import RxSwift
 
 final class MainViewModel {
     
-//    var recipeList: Observalble<CookRecipe> = Observalble(CookRecipe(cookrcp01: Cookrcp01(totalCount: "", row: [[:]], result: Result(msg: "", code: ""))))
-    
     var recipeList = PublishSubject<CookRecipe>()
     
-    func requestRecipe(text: String){
+    func requestRecipe(text: String,  completion: @escaping () -> Void){
         
         APIManager.shared.requsetAPI(text: text) { [weak self] result, error in
             if error == .invalidData {
-                self?.recipeList.onError(error!)
+                //self?.recipeList.onError(error!) // 구독이 종료 되버린다
+                completion()
                 return
             }
             guard let result = result else {return}

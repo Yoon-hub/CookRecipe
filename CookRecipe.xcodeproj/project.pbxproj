@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6742BDBF2909374100348276 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6742BDBE2909374100348276 /* RxCocoa */; };
 		6742BDC12909374100348276 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6742BDC02909374100348276 /* RxSwift */; };
+		6742BDC8290BED2300348276 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BDC7290BED2300348276 /* MainCollectionViewCell.swift */; };
+		6742BDCB290BF67C00348276 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6742BDCA290BF67C00348276 /* Kingfisher */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
 		67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BC2901403000450770 /* SceneDelegate.swift */; };
 		67EEB5C22901403000450770 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EEB5C02901403000450770 /* Main.storyboard */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6742BDC7290BED2300348276 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EEB5BA2901403000450770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EEB5BC2901403000450770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6742BDCB290BF67C00348276 /* Kingfisher in Frameworks */,
 				6742BDC12909374100348276 /* RxSwift in Frameworks */,
 				6742BDBF2909374100348276 /* RxCocoa in Frameworks */,
 				67EEB5D72901446C00450770 /* SnapKit in Frameworks */,
@@ -138,6 +142,7 @@
 				67EEB5D1290142B500450770 /* MainViewController.swift */,
 				67EEB5E92901A74800450770 /* MainViewModel.swift */,
 				67EEB5D32901444900450770 /* MainView.swift */,
+				6742BDC7290BED2300348276 /* MainCollectionViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				67EEB5D62901446C00450770 /* SnapKit */,
 				6742BDBE2909374100348276 /* RxCocoa */,
 				6742BDC02909374100348276 /* RxSwift */,
+				6742BDCA290BF67C00348276 /* Kingfisher */,
 			);
 			productName = CookRecipe;
 			productReference = 67EEB5B72901403000450770 /* CookRecipe.app */;
@@ -194,6 +200,7 @@
 			packageReferences = (
 				67EEB5D52901446C00450770 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6742BDBD2909374100348276 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				6742BDC9290BF67C00348276 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 67EEB5B82901403000450770 /* Products */;
 			projectDirPath = "";
@@ -229,6 +236,7 @@
 				67EEB5E7290199FF00450770 /* Observable.swift in Sources */,
 				67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */,
 				67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */,
+				6742BDC8290BED2300348276 /* MainCollectionViewCell.swift in Sources */,
 				67EEB5EA2901A74800450770 /* MainViewModel.swift in Sources */,
 				67EEB5E129018E0200450770 /* APIError.swift in Sources */,
 				67EEB5E42901959600450770 /* CookRecipe.swift in Sources */,
@@ -459,6 +467,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		6742BDC9290BF67C00348276 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		67EEB5D52901446C00450770 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -479,6 +495,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6742BDBD2909374100348276 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		6742BDCA290BF67C00348276 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6742BDC9290BF67C00348276 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		67EEB5D62901446C00450770 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
