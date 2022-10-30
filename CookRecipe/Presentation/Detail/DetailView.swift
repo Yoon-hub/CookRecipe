@@ -11,7 +11,12 @@ import SnapKit
 
 final class DetailView: UIView {
     
-    let tableView = UITableView()
+    let tableView: UITableView = {
+       let view = UITableView()
+        view.register(CookInfoCollectionViewCell.self, forCellReuseIdentifier: "CookInfoCollectionViewCell")
+        view.separatorStyle = .none
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

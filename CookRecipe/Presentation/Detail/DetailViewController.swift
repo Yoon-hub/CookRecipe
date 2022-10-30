@@ -8,12 +8,21 @@
 import UIKit
 
 import Kingfisher
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 class DetailViewController: UIViewController {
 
-    let detailView = DetailView()
+    private let detailView = DetailView()
+    
+    private let viewModel = DetailViewModel()
+    
+    private let disposeBag = DisposeBag()
     
     var dic: [String:String]?
+    
+    private var dataSource: RxTableViewSectionedReloadDataSource<SectionCookInfo>!
     
     //Life Cycle
     override func loadView() {
@@ -23,23 +32,25 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configure()
+        delegateConfigure()
         configureHeader()
         navigationConfigure()
-        
+        setDataSource()
+        tableViewBind()
+        viewModel.fetchInfo(data: dic!)
     }
 }
 
 //MARK: - Configure
 extension DetailViewController {
     
-    private func configure() {
+    private func delegateConfigure() {
         let scrollView = detailView.tableView as UIScrollView
         scrollView.delegate = self
     }
     
     private func navigationConfigure() {
-        navigationController?.navigationBar.topItem?.title = ""
+       // navigationController?.navigationBar.topItem?.title = ""
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithTransparentBackground()
@@ -53,8 +64,32 @@ extension DetailViewController {
     }
 }
 
+//MARK: - TableView
+extension DetailViewController {
+    
+    func setDataSource() {
+        dataSource = RxTableViewSectionedReloadDataSource<SectionCookInfo>(configureCell: { dataSource, tableView, indexPath, item in
+   
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CookInfoCollectionViewCell", for: indexPath) as! CookInfoCollectionViewCell
+            cell.titleLable.text = item.name
+            let config = UIImage.SymbolConfiguration(pointSize: 100)
+            let button = item.favorite ? UIImage(systemName: "bookmark", withConfiguration: config) : UIImage(systemName: "bookmark.fill", withConfiguration: config)
+            cell.bookMarkButton.setImage(button, for: .normal)
+            return cell
+            
+        })
+    }
+    
+    func tableViewBind() {
+        viewModel.cookInfo
+            .bind(to: detailView.tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+    }
+}
+    
 
-//MARK: - Set TableView Header
+
+//MARK: - Set TableView HeaderView
 extension DetailViewController: UIScrollViewDelegate {
     
     private func configureHeader() {

@@ -10,4 +10,5 @@ import Foundation
 enum RowDictionary: String {
     case title = "RCP_NM"
     case image = "ATT_FILE_NO_MAIN"
+    case ingredient = "RCP_PARTS_DTLS"
 }

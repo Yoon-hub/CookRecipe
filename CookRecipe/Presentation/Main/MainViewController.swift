@@ -33,6 +33,7 @@ final class MainViewController: UIViewController {
         subscirbe()
         subscribeSearchBar()
         cellSelected()
+    
     }
 }
 
