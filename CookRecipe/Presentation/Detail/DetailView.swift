@@ -13,7 +13,8 @@ final class DetailView: UIView {
     
     let tableView: UITableView = {
        let view = UITableView()
-        view.register(CookInfoCollectionViewCell.self, forCellReuseIdentifier: "CookInfoCollectionViewCell")
+        view.register(CookInfoCollectionViewCell.self, forCellReuseIdentifier: CookInfoCollectionViewCell.reusable)
+        view.register(CookIngredientTableViewCell.self, forCellReuseIdentifier: CookIngredientTableViewCell.reusable)
         view.separatorStyle = .none
         return view
     }()

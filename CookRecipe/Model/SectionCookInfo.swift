@@ -14,17 +14,23 @@ struct CookInfo {
     var favorite: Bool
 }
 
+struct CookIngredient{
+    var ingredient: String
+}
+
 enum CookItem {
     case top(CookInfo)
+    case middle(CookIngredient)
 }
 
 
 struct SectionCookInfo {
+    var header: String
     var items: [Item]
 }
 
 extension SectionCookInfo: SectionModelType {
-  typealias Item = CookInfo
+  typealias Item = CookItem
 
    init(original: SectionCookInfo, items: [Item]) {
     self = original

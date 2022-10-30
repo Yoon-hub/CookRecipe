@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class CookInfoCollectionViewCell: UITableViewCell {
+final class CookInfoCollectionViewCell: UITableViewCell {
     
     let titleLable: UILabel = {
         let view = UILabel()
@@ -19,7 +19,7 @@ class CookInfoCollectionViewCell: UITableViewCell {
     
     let bookMarkButton: UIButton = {
         let button = UIButton()
-        let config = UIImage.SymbolConfiguration(pointSize: 100)
+        let config = UIImage.SymbolConfiguration(pointSize: 50)
         button.setImage(UIImage(systemName: "bookmark", withConfiguration: config), for: .normal)
         button.tintColor = UIColor(named: "appColor")
         return button
@@ -45,7 +45,7 @@ class CookInfoCollectionViewCell: UITableViewCell {
         bookMarkButton.snp.makeConstraints {
             $0.trailing.equalTo(self).offset(-20)
             $0.centerY.equalTo(self)
-            $0.width.height.equalTo(35)
+            $0.width.height.equalTo(28)
         }
     }
     
