@@ -18,9 +18,15 @@ struct CookIngredient{
     var ingredient: String
 }
 
+struct RecipeSection {
+    //var number: String
+    var content: String
+}
+
 enum CookItem {
     case top(CookInfo)
     case middle(CookIngredient)
+    case bottom(RecipeSection)
 }
 
 

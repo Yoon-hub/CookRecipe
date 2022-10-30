@@ -82,7 +82,13 @@ extension DetailViewController {
                 return cell
             case let .middle(cookIngredient):
                 let cell = tableView.dequeueReusableCell(withIdentifier: CookIngredientTableViewCell.reusable, for: indexPath) as! CookIngredientTableViewCell
+                cell.selectionStyle = .none
                 cell.ingredentLabel.text = cookIngredient.ingredient
+                return cell
+            case let .bottom(recipeSection):
+                let cell = tableView.dequeueReusableCell(withIdentifier: RecipeTableViewCell.reusable, for: indexPath) as! RecipeTableViewCell
+                cell.selectionStyle = .none
+                cell.contentLabel.text = recipeSection.content
                 return cell
             }
         })
