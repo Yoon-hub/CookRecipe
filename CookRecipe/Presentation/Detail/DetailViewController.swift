@@ -49,19 +49,17 @@ extension DetailViewController {
     private func delegateConfigure() {
         let scrollView = detailView.tableView as UIScrollView
         scrollView.delegate = self
+        detailView.tableView.delegate = self
     }
     
     private func navigationConfigure() {
-       // navigationController?.navigationBar.topItem?.title = ""
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithTransparentBackground()
-
         navigationController?.navigationBar.tintColor = .black
-
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
         navigationItem.standardAppearance = navigationBarAppearance
-        navigationItem.compactAppearance = navigationBarAppearance
+//        navigationItem.compactAppearance = navigationBarAppearance
         
     }
 }
@@ -125,3 +123,19 @@ extension DetailViewController: UIScrollViewDelegate {
      }
         
 }
+
+//MARK: - TableViewDelegate
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            return 110
+        } else if indexPath.section == 0 {
+            return 40
+        } else {
+            return 75
+        }
+        
+    }
+    
+}
+
