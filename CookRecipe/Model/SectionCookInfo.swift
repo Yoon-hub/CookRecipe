@@ -19,7 +19,6 @@ struct CookIngredient{
 }
 
 struct RecipeSection {
-    //var number: String
     var content: String
 }
 

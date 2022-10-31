@@ -73,19 +73,16 @@ extension DetailViewController {
             case let .top(cookInfo):
                 let cell = tableView.dequeueReusableCell(withIdentifier: CookInfoCollectionViewCell.reusable, for: indexPath) as! CookInfoCollectionViewCell
                 cell.titleLable.text = cookInfo.name
-                cell.selectionStyle = .none
                 let config = UIImage.SymbolConfiguration(pointSize: 100)
                 let button = cookInfo.favorite ? UIImage(systemName: "bookmark", withConfiguration: config) : UIImage(systemName: "bookmark.fill", withConfiguration: config)   
                 cell.bookMarkButton.setImage(button, for: .normal)
                 return cell
             case let .middle(cookIngredient):
                 let cell = tableView.dequeueReusableCell(withIdentifier: CookIngredientTableViewCell.reusable, for: indexPath) as! CookIngredientTableViewCell
-                cell.selectionStyle = .none
                 cell.ingredentLabel.text = cookIngredient.ingredient
                 return cell
             case let .bottom(recipeSection):
                 let cell = tableView.dequeueReusableCell(withIdentifier: RecipeTableViewCell.reusable, for: indexPath) as! RecipeTableViewCell
-                cell.selectionStyle = .none
                 cell.contentLabel.text = recipeSection.content
                 return cell
             }
@@ -126,15 +123,15 @@ extension DetailViewController: UIScrollViewDelegate {
 
 //MARK: - TableViewDelegate
 extension DetailViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 {
+        if indexPath.section == DetailTableViewSection.ingredient.rawValue {
             return 110
-        } else if indexPath.section == 0 {
+        } else if indexPath.section == DetailTableViewSection.title.rawValue{
             return 40
         } else {
             return 75
         }
-        
     }
     
 }

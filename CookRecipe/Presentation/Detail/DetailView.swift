@@ -16,7 +16,6 @@ final class DetailView: UIView {
         view.register(CookInfoCollectionViewCell.self, forCellReuseIdentifier: CookInfoCollectionViewCell.reusable)
         view.register(CookIngredientTableViewCell.self, forCellReuseIdentifier: CookIngredientTableViewCell.reusable)
         view.register(RecipeTableViewCell.self, forCellReuseIdentifier: RecipeTableViewCell.reusable)
-        view.rowHeight = 100
         view.separatorStyle = .none
         return view
     }()

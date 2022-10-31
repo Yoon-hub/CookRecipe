@@ -13,16 +13,19 @@ final class MainViewModel {
     
     var recipeList = PublishSubject<CookRecipe>()
     
-    func requestRecipe(text: String,  completion: @escaping () -> Void){
+    func requestRecipe(text: String,  completion: @escaping (String) -> Void){
         
-        APIManager.shared.requsetAPI(text: text) { [weak self] result, error in
-            if error == .invalidData {
-                //self?.recipeList.onError(error!) // 구독이 종료 되버린다
-                completion()
-                return
+        APIManager.shared.requsetAPI(text: text) { result in
+            switch result {
+            case let .success(data):
+                self.recipeList.onNext(data)
+            case let .failure(error):
+                switch error {
+                case .invalidData, .failedResponse, .invalidRessponse, .noData, .failedRequest:
+                    completion(error.rawValue)
+                }
+                
             }
-            guard let result = result else {return}
-            self?.recipeList.onNext(result) 
         }
     }
     

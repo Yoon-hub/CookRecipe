@@ -67,8 +67,8 @@ extension MainViewController {
             .bind { vc, value in
                 print(value)
                 guard value != "" else { return }
-                vc.viewModel.requestRecipe(text: value) { [weak self] in
-                    let alert = UIAlertController(title: "", message: "검색하신 레시피가 없습니다.", preferredStyle: .alert)
+                vc.viewModel.requestRecipe(text: value) { [weak self] message in
+                    let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
                     let ok = UIAlertAction(title: "확인", style: .cancel)
                     alert.addAction(ok)
                     self?.present(alert, animated: true)

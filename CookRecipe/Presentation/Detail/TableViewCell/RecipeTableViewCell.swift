@@ -11,13 +11,6 @@ import SnapKit
 
 final class RecipeTableViewCell: UITableViewCell {
     
-    let numberLabel: UILabel = {
-        let view = UILabel()
-        view.font = .boldSystemFont(ofSize: 17)
-        view.backgroundColor = UIColor(named: "appColor")
-        return view
-    }()
-    
     let contentLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
@@ -26,6 +19,7 @@ final class RecipeTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
         [contentLabel].forEach { self.addSubview($0) }
         configure()
     }
@@ -35,11 +29,7 @@ final class RecipeTableViewCell: UITableViewCell {
     }
     
     private func configure() {
-//        numberLabel.snp.makeConstraints {
-//            $0.leading.equalTo(self).offset(20)
-//            $0.centerY.equalTo(self)
-//        }
-//
+
         contentLabel.snp.makeConstraints {
             $0.leading.equalTo(self).offset(20)
             $0.trailing.equalTo(self).offset(-20)
