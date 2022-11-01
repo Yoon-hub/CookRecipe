@@ -21,6 +21,9 @@ final class MainViewController: UIViewController {
     
     var dispoasBag = DisposeBag()
     
+    var input: MainViewModel.Input!
+    var output: MainViewModel.Output!
+    
     //vc Lifecycle
     override func loadView() {
         view = mainView
@@ -29,6 +32,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationConfigure()
+        inputOutput()
         cellRegiste()
         subscirbe()
         subscribeSearchBar()
@@ -40,12 +44,17 @@ final class MainViewController: UIViewController {
 //MARK: - configure
 extension MainViewController {
     
+    private func inputOutput() {
+        input = MainViewModel.Input(searchBar: mainView.searchBar.rx.text)
+        output = viewModel.transform(input: input)
+    }
+    
     private func navigationConfigure() {
         self.navigationItem.title = "레시피 검색"
     }
     			
     private func subscirbe() {
-        viewModel.recipeList
+        output.recipeList
             .subscribe(onNext: { [weak self] cookRecipe in
                 var snapshot = NSDiffableDataSourceSnapshot<Int, [String:String]>()
                 snapshot.appendSections([0])
@@ -60,18 +69,14 @@ extension MainViewController {
 
 extension MainViewController {
     func subscribeSearchBar() {
-        mainView.searchBar.rx.text.orEmpty
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)  // 키보드 입력이 종료되고 1초후에
-            .distinctUntilChanged() // 한번 검색한건 안함
+        output.searchBar
             .withUnretained(self)
             .bind { vc, value in
                 print(value)
                 guard value != "" else { return }
                 vc.viewModel.requestRecipe(text: value) { [weak self] message in
-                    let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-                    let ok = UIAlertAction(title: "확인", style: .cancel)
-                    alert.addAction(ok)
-                    self?.present(alert, animated: true)
+                    let alert = self?.showAlert(message: message)
+                    self?.present(alert!, animated: true)
                 }
             }
             .disposed(by: dispoasBag)

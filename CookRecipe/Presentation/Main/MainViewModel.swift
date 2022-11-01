@@ -8,6 +8,7 @@
 import Foundation
 
 import RxSwift
+import RxCocoa
 
 final class MainViewModel {
     
@@ -28,5 +29,27 @@ final class MainViewModel {
             }
         }
     }
-    
 }
+
+// Input Output Pattern
+extension MainViewModel: CommonViewModel {
+    
+    struct Input {
+        let searchBar: ControlProperty<String?>
+    }
+    
+    struct Output {
+        let recipeList: PublishSubject<CookRecipe>
+        let searchBar: Observable<ControlProperty<String>.Element>
+    }
+    
+    func transform(input: Input) -> Output {
+        let searchbar = input.searchBar.orEmpty
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+        
+        return Output(recipeList: recipeList, searchBar: searchbar)
+    }
+}
+
+

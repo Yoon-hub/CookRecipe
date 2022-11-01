@@ -24,6 +24,8 @@
 		6742BDF3290EDBE500348276 /* ReuesableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BDF2290EDBE500348276 /* ReuesableProtocol.swift */; };
 		6742BDF5290F353F00348276 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BDF4290F353F00348276 /* RecipeTableViewCell.swift */; };
 		6742BE02290F82BE00348276 /* DetailTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BE01290F82BE00348276 /* DetailTableViewSection.swift */; };
+		67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */; };
+		67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFE29115F8A00CD7AFC /* Alert+.swift */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
 		67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BC2901403000450770 /* SceneDelegate.swift */; };
 		67EEB5C22901403000450770 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67EEB5C02901403000450770 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		6742BDF2290EDBE500348276 /* ReuesableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuesableProtocol.swift; sourceTree = "<group>"; };
 		6742BDF4290F353F00348276 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		6742BE01290F82BE00348276 /* DetailTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewSection.swift; sourceTree = "<group>"; };
+		67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
+		67D5BDFE29115F8A00CD7AFC /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EEB5BA2901403000450770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EEB5BC2901403000450770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6742BDD8290D71F400348276 /* Transition+.swift */,
+				67D5BDFE29115F8A00CD7AFC /* Alert+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				6742BDF2290EDBE500348276 /* ReuesableProtocol.swift */,
+				67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 				6742BDF3290EDBE500348276 /* ReuesableProtocol.swift in Sources */,
 				6742BDE7290EBC2B00348276 /* CookInfoCollectionViewCell.swift in Sources */,
 				6742BDDB290E889D00348276 /* DetailViewModel.swift in Sources */,
+				67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */,
 				6742BDF5290F353F00348276 /* RecipeTableViewCell.swift in Sources */,
 				6742BDD2290D6A3B00348276 /* DetailViewController.swift in Sources */,
 				67EEB5DF29017DE300450770 /* APIManager.swift in Sources */,
@@ -330,6 +337,7 @@
 				6742BE02290F82BE00348276 /* DetailTableViewSection.swift in Sources */,
 				6742BDD4290D6A7F00348276 /* DetailView.swift in Sources */,
 				67EEB5D42901444900450770 /* MainView.swift in Sources */,
+				67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */,
 				67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */,
 				6742BDD6290D6BA800348276 /* StretchyTableHeaderView.swift in Sources */,
 				6742BDCF290D5CC400348276 /* RowDictionary.swift in Sources */,
