@@ -36,11 +36,13 @@ extension MainViewModel: CommonViewModel {
     
     struct Input {
         let searchBar: ControlProperty<String?>
+        let itemSelected:  ControlEvent<IndexPath>
     }
     
     struct Output {
         let recipeList: PublishSubject<CookRecipe>
         let searchBar: Observable<ControlProperty<String>.Element>
+        let itemSelected: ControlEvent<IndexPath>
     }
     
     func transform(input: Input) -> Output {
@@ -48,7 +50,7 @@ extension MainViewModel: CommonViewModel {
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
         
-        return Output(recipeList: recipeList, searchBar: searchbar)
+        return Output(recipeList: recipeList, searchBar: searchbar, itemSelected: input.itemSelected)
     }
 }
 

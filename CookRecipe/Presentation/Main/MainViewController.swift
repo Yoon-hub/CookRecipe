@@ -45,7 +45,7 @@ final class MainViewController: UIViewController {
 extension MainViewController {
     
     private func inputOutput() {
-        input = MainViewModel.Input(searchBar: mainView.searchBar.rx.text)
+        input = MainViewModel.Input(searchBar: mainView.searchBar.rx.text, itemSelected: mainView.collectionView.rx.itemSelected)
         output = viewModel.transform(input: input)
     }
     
@@ -63,6 +63,8 @@ extension MainViewController {
             })
             .disposed(by: dispoasBag) // 한번 실패하면 error가 발생하고 disposed 되버려서 다시 실행이 안된다
     }
+    
+    
 }
 
 //MARK: - searchBar RxCocoa
@@ -72,7 +74,6 @@ extension MainViewController {
         output.searchBar
             .withUnretained(self)
             .bind { vc, value in
-                print(value)
                 guard value != "" else { return }
                 vc.viewModel.requestRecipe(text: value) { [weak self] message in
                     let alert = self?.showAlert(message: message)
@@ -101,8 +102,7 @@ extension MainViewController {
     }
     
     private func cellSelected() {
-        mainView.collectionView.rx
-            .itemSelected
+        output.itemSelected
             .bind { [weak self] in
                 guard let item = self?.dataSource.itemIdentifier(for: $0) else { return }
                 let vc = DetailViewController()

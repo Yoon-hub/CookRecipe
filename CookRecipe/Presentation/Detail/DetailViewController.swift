@@ -22,6 +22,9 @@ class DetailViewController: UIViewController {
     
     var dic: [String:String]?
     
+    var input: DetailViewModel.Input!
+    var output: DetailViewModel.Output!
+    
     private var dataSource: RxTableViewSectionedReloadDataSource<SectionCookInfo>!
     
     //Life Cycle
@@ -59,8 +62,11 @@ extension DetailViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
         navigationItem.standardAppearance = navigationBarAppearance
-//        navigationItem.compactAppearance = navigationBarAppearance
-        
+    }
+    
+    private func inputOutput() {
+        input = DetailViewModel.Input()
+        output = viewModel.transform(input: input)
     }
 }
 
@@ -73,8 +79,7 @@ extension DetailViewController {
             case let .top(cookInfo):
                 let cell = tableView.dequeueReusableCell(withIdentifier: CookInfoCollectionViewCell.reusable, for: indexPath) as! CookInfoCollectionViewCell
                 cell.titleLable.text = cookInfo.name
-                let config = UIImage.SymbolConfiguration(pointSize: 100)
-                let button = cookInfo.favorite ? UIImage(systemName: "bookmark", withConfiguration: config) : UIImage(systemName: "bookmark.fill", withConfiguration: config)   
+                let button = cell.setButtonImage(favorite: cookInfo.favorite)
                 cell.bookMarkButton.setImage(button, for: .normal)
                 return cell
             case let .middle(cookIngredient):
@@ -90,7 +95,7 @@ extension DetailViewController {
     }
     
     private func tableViewBind() {
-        viewModel.cookInfo
+        output.cookInfo
             .bind(to: detailView.tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
@@ -125,14 +130,8 @@ extension DetailViewController: UIScrollViewDelegate {
 extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == DetailTableViewSection.ingredient.rawValue {
-            return 110
-        } else if indexPath.section == DetailTableViewSection.title.rawValue{
-            return 40
-        } else {
-            return 75
+        let section: [Int:CGFloat] = [0:40, 1:110, 2:75]
+            return section[indexPath.section]!
         }
-    }
-    
-}
 
+}

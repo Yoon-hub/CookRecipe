@@ -37,7 +37,7 @@ final class CookInfoCollectionViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure() {
+    private func configure() {
         titleLable.snp.makeConstraints {
             $0.leading.equalTo(self).offset(20)
             $0.centerY.equalTo(self)
@@ -48,6 +48,11 @@ final class CookInfoCollectionViewCell: UITableViewCell {
             $0.centerY.equalTo(self)
             $0.width.height.equalTo(28)
         }
+    }
+    
+    func setButtonImage(favorite: Bool ) -> UIImage {
+        let config = UIImage.SymbolConfiguration(pointSize: 100)
+        return favorite ? UIImage(systemName: "bookmark", withConfiguration: config)! : UIImage(systemName: "bookmark.fill", withConfiguration: config)!
     }
     
     

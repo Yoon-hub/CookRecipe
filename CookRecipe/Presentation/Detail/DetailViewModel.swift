@@ -41,11 +41,25 @@ final class DetailViewModel {
                 bottomInfo.append(item)
             }
         }
-        
         return bottomInfo
+    }
+}
+
+// Input Output Pattern
+extension DetailViewModel: CommonViewModel {
+    
+    struct Input {
         
     }
     
+    struct Output {
+        let cookInfo: PublishSubject<[SectionCookInfo]>
+    }
+    
+    func transform(input: Input) -> Output {
+     
+        return Output(cookInfo: cookInfo)
+    }
 }
 
 
