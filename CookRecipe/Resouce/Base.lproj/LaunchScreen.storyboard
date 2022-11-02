@@ -15,29 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvC-bT-Xrx">
-                                <rect key="frame" x="47" y="366" width="159" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1J-Wh-kuI">
-                                <rect key="frame" x="214" y="366" width="159" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I1J-Wh-kuI" secondAttribute="trailing" constant="20" id="24h-sV-fxy"/>
-                            <constraint firstItem="qvC-bT-Xrx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="GQr-Ov-RiV"/>
-                            <constraint firstItem="qvC-bT-Xrx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="307" id="Opc-gC-gxT"/>
-                            <constraint firstItem="I1J-Wh-kuI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="307" id="ZB6-cM-qDq"/>
-                            <constraint firstItem="I1J-Wh-kuI" firstAttribute="width" secondItem="qvC-bT-Xrx" secondAttribute="width" id="diO-GJ-X9z"/>
-                            <constraint firstItem="I1J-Wh-kuI" firstAttribute="leading" secondItem="qvC-bT-Xrx" secondAttribute="trailing" constant="8" symbolic="YES" id="k4g-xp-cLY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qvC-bT-Xrx" secondAttribute="bottom" constant="417" id="pzo-52-3Wc"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

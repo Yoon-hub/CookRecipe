@@ -13,7 +13,8 @@ final class BeginView: UIView {
     
     let mainLabel: UILabel = {
         let view = UILabel()
-        view.text = "CookRecipe"
+        view.numberOfLines = 0
+        view.text = "요리\n   조리법"
         view.font = .boldSystemFont(ofSize: 30)
         view.textColor = UIColor(named: "mainColor")
         return view
@@ -56,7 +57,7 @@ final class BeginView: UIView {
     private func setConstraints() {
         mainLabel.snp.makeConstraints {
             $0.centerX.equalTo(self)
-            $0.centerY.equalTo(self).offset(-20)
+            $0.centerY.equalTo(self).offset(-60)
         }
         
         loginButton.snp.makeConstraints {

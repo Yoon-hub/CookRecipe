@@ -14,6 +14,7 @@ final class BeginViewController: UIViewController {
     
     let beginView = BeginView()
     
+    let disposeBag = DisposeBag()
     override func loadView() {
         self.view = beginView
     }
@@ -34,5 +35,6 @@ extension BeginViewController {
                 let vc = LoginViewController()
                 self?.transition(vc, transitionStyle: .navigation)
             }
+            .disposed(by: disposeBag)
     }
 }
