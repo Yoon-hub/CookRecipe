@@ -20,11 +20,13 @@ final class LoginView: UIView {
         $0.backgroundColor = .systemGray6
         $0.layer.cornerRadius = 10
         $0.setLeftPaddingPoints(15)
+        $0.autocapitalizationType = .none
     }
     let pwTextField = UITextField().then {
         $0.backgroundColor = .systemGray6
         $0.layer.cornerRadius = 10
         $0.setLeftPaddingPoints(15)
+        $0.autocapitalizationType = .none
     }
     
     let pwlabel = UILabel().then {

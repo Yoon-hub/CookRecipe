@@ -32,6 +32,10 @@
 		676B369E2912AEA800337D51 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B369D2912AEA800337D51 /* TextField+.swift */; };
 		676B36A12912B4E700337D51 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 676B36A02912B4E700337D51 /* IQKeyboardManagerSwift */; };
 		676B36A32912F3FC00337D51 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36A22912F3FC00337D51 /* LoginViewModel.swift */; };
+		676B36A52913074200337D51 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36A42913074200337D51 /* Login.swift */; };
+		676B36A7291307E700337D51 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36A6291307E700337D51 /* APIService.swift */; };
+		676B36AA2913084B00337D51 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 676B36A92913084B00337D51 /* Alamofire */; };
+		676B36AC2913087F00337D51 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36AB2913087F00337D51 /* Endpoint.swift */; };
 		67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */; };
 		67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFE29115F8A00CD7AFC /* Alert+.swift */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
@@ -70,6 +74,9 @@
 		676B36982912A53400337D51 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		676B369D2912AEA800337D51 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
 		676B36A22912F3FC00337D51 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		676B36A42913074200337D51 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		676B36A6291307E700337D51 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		676B36AB2913087F00337D51 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFE29115F8A00CD7AFC /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				676B36A12912B4E700337D51 /* IQKeyboardManagerSwift in Frameworks */,
+				676B36AA2913084B00337D51 /* Alamofire in Frameworks */,
 				6742BDCB290BF67C00348276 /* Kingfisher in Frameworks */,
 				676B369C2912AA4400337D51 /* Then in Frameworks */,
 				6742BDE5290EBA0100348276 /* RxDataSources in Frameworks */,
@@ -253,6 +261,8 @@
 				67EEB5DC29015A6B00450770 /* APIKey.swift */,
 				67EEB5DE29017DE300450770 /* APIManager.swift */,
 				67EEB5E029018E0200450770 /* APIError.swift */,
+				676B36A6291307E700337D51 /* APIService.swift */,
+				676B36AB2913087F00337D51 /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -262,6 +272,7 @@
 			children = (
 				67EEB5E32901959600450770 /* CookRecipe.swift */,
 				6742BDDC290E8AD100348276 /* SectionCookInfo.swift */,
+				676B36A42913074200337D51 /* Login.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 				6742BDED290ECCA500348276 /* RxSwift */,
 				676B369B2912AA4400337D51 /* Then */,
 				676B36A02912B4E700337D51 /* IQKeyboardManagerSwift */,
+				676B36A92913084B00337D51 /* Alamofire */,
 			);
 			productName = CookRecipe;
 			productReference = 67EEB5B72901403000450770 /* CookRecipe.app */;
@@ -337,6 +349,7 @@
 				6742BDEA290ECCA500348276 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				676B369A2912AA4400337D51 /* XCRemoteSwiftPackageReference "Then" */,
 				676B369F2912B4E700337D51 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				676B36A82913084B00337D51 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 67EEB5B82901403000450770 /* Products */;
 			projectDirPath = "";
@@ -369,6 +382,7 @@
 				676B36992912A53400337D51 /* LoginView.swift in Sources */,
 				6742BDF3290EDBE500348276 /* ReuesableProtocol.swift in Sources */,
 				6742BDE7290EBC2B00348276 /* CookInfoCollectionViewCell.swift in Sources */,
+				676B36A7291307E700337D51 /* APIService.swift in Sources */,
 				6742BDDB290E889D00348276 /* DetailViewModel.swift in Sources */,
 				67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */,
 				6742BDF5290F353F00348276 /* RecipeTableViewCell.swift in Sources */,
@@ -396,6 +410,8 @@
 				67EEB5EA2901A74800450770 /* MainViewModel.swift in Sources */,
 				67EEB5E129018E0200450770 /* APIError.swift in Sources */,
 				67EEB5E42901959600450770 /* CookRecipe.swift in Sources */,
+				676B36AC2913087F00337D51 /* Endpoint.swift in Sources */,
+				676B36A52913074200337D51 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +671,14 @@
 				kind = branch;
 			};
 		};
+		676B36A82913084B00337D51 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		67EEB5D52901446C00450770 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -695,6 +719,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 676B369F2912B4E700337D51 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		676B36A92913084B00337D51 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 676B36A82913084B00337D51 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		67EEB5D62901446C00450770 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         gestureConfigure()
         bindTextField()
         checkValidation()
+        loginButton()
     }
 
 }
@@ -58,6 +59,22 @@ extension LoginViewController {
             .bind(to: loginView.loginButton.rx.isHidden)
             .disposed(by: disposeBag)
         
+    }
+    
+    private func loginButton() {
+        loginView.loginButton.rx.tap
+            .bind { [weak self]  in
+                self?.viewModel.requestLogin(email: (self?.loginView.idTextField.text)!, password: (self?.loginView.pwTextField.text)!) { result in
+                    switch result {
+                    case .success(_):
+                        self?.resetWindow()
+                    case .failure(let status):
+                        let alert = self?.showAlert(message: "\(status) 에러!!!!")
+                        self?.present(alert!, animated: true)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
 }
@@ -102,4 +119,20 @@ extension LoginViewController: UITextFieldDelegate {
         textField.backgroundColor = .systemGray6
     }
     
+}
+
+
+//MARK: - user defined functions
+extension LoginViewController {
+    
+    func resetWindow() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let vc = MainViewController()
+        let navi = UINavigationController(rootViewController: vc)
+        
+        sceneDelegate?.window?.rootViewController = navi
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
 }

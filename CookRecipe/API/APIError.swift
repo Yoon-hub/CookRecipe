@@ -12,6 +12,11 @@ enum APIResult<T, G: Error> {
     case failure(G)
 }
 
+enum APILoginResult<T, G> {
+    case success(T)
+    case failure(G)
+}
+
 enum APIError: String, Error {
     case invalidRessponse = "응답이 없습니다."
     case noData = "데이터가 없습니다."
