@@ -21,7 +21,7 @@ final class CookInfoCollectionViewCell: UITableViewCell {
         let button = UIButton()
         let config = UIImage.SymbolConfiguration(pointSize: 50)
         button.setImage(UIImage(systemName: "bookmark", withConfiguration: config), for: .normal)
-        button.tintColor = UIColor(named: "appColor")
+        button.tintColor = UIColor(named: "mainColor")
         return button
     }()
     

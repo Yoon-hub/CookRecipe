@@ -24,6 +24,9 @@
 		6742BDF3290EDBE500348276 /* ReuesableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BDF2290EDBE500348276 /* ReuesableProtocol.swift */; };
 		6742BDF5290F353F00348276 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BDF4290F353F00348276 /* RecipeTableViewCell.swift */; };
 		6742BE02290F82BE00348276 /* DetailTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742BE01290F82BE00348276 /* DetailTableViewSection.swift */; };
+		676B369229128ED300337D51 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B369129128ED300337D51 /* BeginViewController.swift */; };
+		676B369429128F7A00337D51 /* BeginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B369329128F7A00337D51 /* BeginView.swift */; };
+		676B3697291297B600337D51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B3696291297B600337D51 /* LoginViewController.swift */; };
 		67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */; };
 		67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFE29115F8A00CD7AFC /* Alert+.swift */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
@@ -56,6 +59,9 @@
 		6742BDF2290EDBE500348276 /* ReuesableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuesableProtocol.swift; sourceTree = "<group>"; };
 		6742BDF4290F353F00348276 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		6742BE01290F82BE00348276 /* DetailTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewSection.swift; sourceTree = "<group>"; };
+		676B369129128ED300337D51 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		676B369329128F7A00337D51 /* BeginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginView.swift; sourceTree = "<group>"; };
+		676B3696291297B600337D51 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFE29115F8A00CD7AFC /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +157,23 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		676B369029128E8100337D51 /* Begin */ = {
+			isa = PBXGroup;
+			children = (
+				676B369129128ED300337D51 /* BeginViewController.swift */,
+				676B369329128F7A00337D51 /* BeginView.swift */,
+			);
+			path = Begin;
+			sourceTree = "<group>";
+		};
+		676B3695291297A500337D51 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				676B3696291297B600337D51 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		67EEB5AE2901403000450770 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +226,8 @@
 		67EEB5D02901429900450770 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				676B3695291297A500337D51 /* Login */,
+				676B369029128E8100337D51 /* Begin */,
 				67EEB5E82901A73900450770 /* Main */,
 				6742BDD0290D6A2100348276 /* Detail */,
 			);
@@ -323,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				676B3697291297B600337D51 /* LoginViewController.swift in Sources */,
 				6742BDF3290EDBE500348276 /* ReuesableProtocol.swift in Sources */,
 				6742BDE7290EBC2B00348276 /* CookInfoCollectionViewCell.swift in Sources */,
 				6742BDDB290E889D00348276 /* DetailViewModel.swift in Sources */,
@@ -330,6 +356,7 @@
 				6742BDF5290F353F00348276 /* RecipeTableViewCell.swift in Sources */,
 				6742BDD2290D6A3B00348276 /* DetailViewController.swift in Sources */,
 				67EEB5DF29017DE300450770 /* APIManager.swift in Sources */,
+				676B369429128F7A00337D51 /* BeginView.swift in Sources */,
 				6742BDF0290EDB3400348276 /* CookIngredientTableViewCell.swift in Sources */,
 				6742BDDD290E8AD100348276 /* SectionCookInfo.swift in Sources */,
 				6742BDD9290D71F400348276 /* Transition+.swift in Sources */,
@@ -339,6 +366,7 @@
 				67EEB5D42901444900450770 /* MainView.swift in Sources */,
 				67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */,
 				67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */,
+				676B369229128ED300337D51 /* BeginViewController.swift in Sources */,
 				6742BDD6290D6BA800348276 /* StretchyTableHeaderView.swift in Sources */,
 				6742BDCF290D5CC400348276 /* RowDictionary.swift in Sources */,
 				67EEB5E7290199FF00450770 /* Observable.swift in Sources */,
