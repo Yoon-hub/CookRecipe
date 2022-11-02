@@ -51,6 +51,8 @@ extension MainViewController {
     
     private func navigationConfigure() {
         self.navigationItem.title = "레시피 검색"
+        let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButton))
+        self.navigationItem.rightBarButtonItem = profileButton
     }
     			
     private func subscirbe() {
@@ -111,5 +113,13 @@ extension MainViewController {
                 //dump(item)
             }
             .disposed(by: dispoasBag)
+    }
+}
+
+//MARK: - UserDefined
+extension MainViewController {
+    @objc
+    private func profileButton() {
+        
     }
 }

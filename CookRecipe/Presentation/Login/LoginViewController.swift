@@ -67,7 +67,8 @@ extension LoginViewController {
                 self?.viewModel.requestLogin(email: (self?.loginView.idTextField.text)!, password: (self?.loginView.pwTextField.text)!) { result in
                     switch result {
                     case .success(_):
-                        self?.resetWindow()
+                        let vc = MainViewController()
+                        self?.transition(vc, transitionStyle: .naviagionModal)
                     case .failure(let status):
                         let alert = self?.showAlert(message: "\(status) 에러!!!!")
                         self?.present(alert!, animated: true)
