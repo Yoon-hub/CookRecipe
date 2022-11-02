@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        inputOutput()
         delegateConfigure()
         configureHeader()
         navigationConfigure()
@@ -42,6 +43,7 @@ class DetailViewController: UIViewController {
         tableViewHeader()
         tableViewBind()
         viewModel.fetchInfo(data: dic!)
+  
         
     }
 }
