@@ -10,13 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
-    let loginView = LoginView()
+    private let loginView = LoginView()
     
-    let viewModel = LoginViewModel()
+    private let viewModel = LoginViewModel()
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         self.view = loginView

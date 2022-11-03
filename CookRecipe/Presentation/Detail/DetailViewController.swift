@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     private let detailView = DetailView()
     
@@ -22,8 +22,8 @@ class DetailViewController: UIViewController {
     
     var dic: [String:String]?
     
-    var input: DetailViewModel.Input!
-    var output: DetailViewModel.Output!
+    private var input: DetailViewModel.Input!
+    private var output: DetailViewModel.Output!
     
     private var dataSource: RxTableViewSectionedReloadDataSource<SectionCookInfo>!
     

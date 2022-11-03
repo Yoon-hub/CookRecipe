@@ -20,7 +20,7 @@ struct CookRecipe: Codable, Hashable {
 struct Cookrcp01: Codable, Hashable {
     let totalCount: String
     let row: [[String: String]]
-    let result: Result
+    let result: Result1
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
@@ -30,7 +30,7 @@ struct Cookrcp01: Codable, Hashable {
 }
 
 // MARK: - Result
-struct Result: Codable, Hashable {
+struct Result1: Codable, Hashable {
     let msg, code: String
 
     enum CodingKeys: String, CodingKey {

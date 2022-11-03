@@ -17,13 +17,15 @@ final class LoginViewModel {
     
     let disposeBag = DisposeBag()
     
-    func requestLogin(email: String, password: String, completion: @escaping (APILoginResult<Login, Int>) -> Void) {
-        APIService.shared.login(email: email, password: password) { result in
-            switch result {
-            case .success(let token) :
-                completion(.success(token))
-            case .failure(let status) :
-                completion(.failure(status))
+    func requestLogin(email: String, password: String, completion: @escaping (Result<Login, Error>) -> Void) {
+        let api = SeSACAPI.login(email: email, password: password)
+        APIService.shared.apiIntegration(type: Login.self, api: api, method: .post) { response in
+            switch response {
+            case .success(let data):
+                UserDefaults.standard.set(data.token, forKey: "token")
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

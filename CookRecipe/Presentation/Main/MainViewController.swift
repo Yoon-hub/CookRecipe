@@ -13,15 +13,15 @@ import RxCocoa
 
 final class MainViewController: UIViewController {
     
-    let mainView = MainView()
+    private let mainView = MainView()
     
-    let viewModel = MainViewModel()
+    private let viewModel = MainViewModel()
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, [String:String]>!
     
-    var dispoasBag = DisposeBag()
+    private var dispoasBag = DisposeBag()
     
-    var input: MainViewModel.Input!
+    private var input: MainViewModel.Input!
     var output: MainViewModel.Output!
     
     //vc Lifecycle
@@ -53,6 +53,7 @@ extension MainViewController {
         self.navigationItem.title = "레시피 검색"
         let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(profileButton))
         self.navigationItem.rightBarButtonItem = profileButton
+        self.navigationController?.navigationBar.tintColor = .black
     }
     			
     private func subscirbe() {
@@ -72,7 +73,7 @@ extension MainViewController {
 //MARK: - searchBar RxCocoa
 
 extension MainViewController {
-    func subscribeSearchBar() {
+    private func subscribeSearchBar() {
         output.searchBar
             .withUnretained(self)
             .bind { vc, value in
