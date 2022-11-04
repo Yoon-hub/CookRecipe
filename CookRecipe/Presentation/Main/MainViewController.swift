@@ -119,8 +119,10 @@ extension MainViewController {
 
 //MARK: - UserDefined
 extension MainViewController {
+    
     @objc
     private func profileButton() {
-        
+        let vc = ProfileViewController()
+        transition(vc, transitionStyle: .navigation)
     }
 }

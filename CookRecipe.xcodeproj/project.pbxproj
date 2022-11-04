@@ -36,6 +36,9 @@
 		676B36A7291307E700337D51 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36A6291307E700337D51 /* APIService.swift */; };
 		676B36AA2913084B00337D51 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 676B36A92913084B00337D51 /* Alamofire */; };
 		676B36AC2913087F00337D51 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36AB2913087F00337D51 /* Endpoint.swift */; };
+		676B36BB2913F93200337D51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36BA2913F93200337D51 /* ProfileViewController.swift */; };
+		676B36BD2914C14C00337D51 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36BC2914C14C00337D51 /* ProfileView.swift */; };
+		676B36BF2914C54D00337D51 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36BE2914C54D00337D51 /* ProfileViewModel.swift */; };
 		67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */; };
 		67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFE29115F8A00CD7AFC /* Alert+.swift */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
@@ -77,6 +80,9 @@
 		676B36A42913074200337D51 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		676B36A6291307E700337D51 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		676B36AB2913087F00337D51 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		676B36BA2913F93200337D51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		676B36BC2914C14C00337D51 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		676B36BE2914C54D00337D51 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFE29115F8A00CD7AFC /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +201,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		676B36B92913F8F800337D51 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				676B36BA2913F93200337D51 /* ProfileViewController.swift */,
+				676B36BC2914C14C00337D51 /* ProfileView.swift */,
+				676B36BE2914C54D00337D51 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		67EEB5AE2901403000450770 = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +263,7 @@
 		67EEB5D02901429900450770 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				676B36B92913F8F800337D51 /* Profile */,
 				676B3695291297A500337D51 /* Login */,
 				676B369029128E8100337D51 /* Begin */,
 				67EEB5E82901A73900450770 /* Main */,
@@ -404,12 +421,15 @@
 				6742BDD6290D6BA800348276 /* StretchyTableHeaderView.swift in Sources */,
 				6742BDCF290D5CC400348276 /* RowDictionary.swift in Sources */,
 				67EEB5E7290199FF00450770 /* Observable.swift in Sources */,
+				676B36BF2914C54D00337D51 /* ProfileViewModel.swift in Sources */,
 				67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */,
 				67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */,
+				676B36BD2914C14C00337D51 /* ProfileView.swift in Sources */,
 				6742BDC8290BED2300348276 /* MainCollectionViewCell.swift in Sources */,
 				67EEB5EA2901A74800450770 /* MainViewModel.swift in Sources */,
 				67EEB5E129018E0200450770 /* APIError.swift in Sources */,
 				67EEB5E42901959600450770 /* CookRecipe.swift in Sources */,
+				676B36BB2913F93200337D51 /* ProfileViewController.swift in Sources */,
 				676B36AC2913087F00337D51 /* Endpoint.swift in Sources */,
 				676B36A52913074200337D51 /* Login.swift in Sources */,
 			);
