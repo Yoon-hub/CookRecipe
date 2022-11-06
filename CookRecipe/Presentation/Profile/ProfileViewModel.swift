@@ -11,7 +11,7 @@ final class ProfileViewModel {
     
     func requestProfile(completion: @escaping (Result<Profile, Error>) -> Void) {
         let api = SeSACAPI.profile
-        APIService.shared.apiIntegration(type: Profile.self, api: api, method: .get) { result in
+        APIService.shared.apiIntegration(type: Profile.self, api: api, method: .get) { result, statusCode in
             switch result{
             case .success(let data):
                 completion(.success(data))

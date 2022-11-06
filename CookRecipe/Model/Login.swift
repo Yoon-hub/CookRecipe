@@ -20,3 +20,8 @@ struct User: Codable {
     let email: String
     let username: String
 }
+
+struct Regist: Codable {
+    let status: String
+    let message: String
+}

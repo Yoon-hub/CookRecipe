@@ -14,6 +14,8 @@ final class RegistViewController: UIViewController {
     
     let registView = RegistView()
     
+    let viewModel = RegistViewModel()
+    
     let disposeBag = DisposeBag()
     
     override func loadView() {
@@ -24,6 +26,7 @@ final class RegistViewController: UIViewController {
         gestureConfigure()
         checkValidation()
         bindTextField()
+        registButton()
     }
 }
 
@@ -78,6 +81,30 @@ extension RegistViewController {
             .bind(to: registView.registButton.rx.isHidden)
             .disposed(by: disposeBag)
         
+    }
+    
+    private func registButton() {
+        registView.registButton.rx.tap
+            .bind { [weak self] in
+                self?.viewModel.requestRegist(userName: (self?.registView.nameTextField.text)!, email: (self?.registView.idTextField.text)!, password: (self?.registView.pwTextField.text)!, completion: { response, statusCode in
+                    if statusCode == 200 {
+                        self?.viewModel.requestLogin(email: (self?.registView.idTextField.text)!, password: (self?.registView.pwTextField.text)!) { result in
+                            switch result {
+                            case .success(_):
+                                let vc = MainViewController()
+                                self?.transition(vc, transitionStyle: .naviagionModal)
+                            case .failure(let status):
+                                let alert = self?.showAlert(message: "\(status) 에러!!!!")
+                                self?.present(alert!, animated: true)
+                            }
+                        }
+                    } else {
+                        let alret = self?.showAlert(message: "\(statusCode)에러")
+                        self?.present(alret!, animated: true)
+                    }
+                })
+            }
+            .disposed(by: disposeBag)
     }
 }
 

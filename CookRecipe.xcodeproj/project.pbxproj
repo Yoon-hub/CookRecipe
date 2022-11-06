@@ -42,6 +42,7 @@
 		676B36C429174F1200337D51 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36C329174F1200337D51 /* RegistViewController.swift */; };
 		676B36C629174F2100337D51 /* RegistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36C529174F2100337D51 /* RegistView.swift */; };
 		676B36C92917539F00337D51 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36C82917539F00337D51 /* CustomTextField.swift */; };
+		676B36CB29175A3F00337D51 /* RegistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36CA29175A3F00337D51 /* RegistViewModel.swift */; };
 		67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */; };
 		67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFE29115F8A00CD7AFC /* Alert+.swift */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 		676B36C329174F1200337D51 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		676B36C529174F2100337D51 /* RegistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistView.swift; sourceTree = "<group>"; };
 		676B36C82917539F00337D51 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		676B36CA29175A3F00337D51 /* RegistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFE29115F8A00CD7AFC /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				676B36C329174F1200337D51 /* RegistViewController.swift */,
+				676B36CA29175A3F00337D51 /* RegistViewModel.swift */,
 				676B36C529174F2100337D51 /* RegistView.swift */,
 			);
 			path = Regist;
@@ -451,6 +454,7 @@
 				676B36BF2914C54D00337D51 /* ProfileViewModel.swift in Sources */,
 				67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */,
 				67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */,
+				676B36CB29175A3F00337D51 /* RegistViewModel.swift in Sources */,
 				676B36BD2914C14C00337D51 /* ProfileView.swift in Sources */,
 				676B36C629174F2100337D51 /* RegistView.swift in Sources */,
 				6742BDC8290BED2300348276 /* MainCollectionViewCell.swift in Sources */,
