@@ -23,6 +23,7 @@ final class BeginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton()
+        registButton()
     }
 }
 
@@ -33,6 +34,15 @@ extension BeginViewController {
         beginView.loginButton.rx.tap
             .bind { [weak self] in
                 let vc = LoginViewController()
+                self?.transition(vc, transitionStyle: .navigation)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func registButton() {
+        beginView.registButton.rx.tap
+            .bind { [weak self] in
+                let vc = RegistViewController()
                 self?.transition(vc, transitionStyle: .navigation)
             }
             .disposed(by: disposeBag)

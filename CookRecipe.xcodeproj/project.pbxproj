@@ -39,6 +39,9 @@
 		676B36BB2913F93200337D51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36BA2913F93200337D51 /* ProfileViewController.swift */; };
 		676B36BD2914C14C00337D51 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36BC2914C14C00337D51 /* ProfileView.swift */; };
 		676B36BF2914C54D00337D51 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36BE2914C54D00337D51 /* ProfileViewModel.swift */; };
+		676B36C429174F1200337D51 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36C329174F1200337D51 /* RegistViewController.swift */; };
+		676B36C629174F2100337D51 /* RegistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36C529174F2100337D51 /* RegistView.swift */; };
+		676B36C92917539F00337D51 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B36C82917539F00337D51 /* CustomTextField.swift */; };
 		67D5BDFD2911586800CD7AFC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */; };
 		67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BDFE29115F8A00CD7AFC /* Alert+.swift */; };
 		67EEB5BB2901403000450770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EEB5BA2901403000450770 /* AppDelegate.swift */; };
@@ -83,6 +86,9 @@
 		676B36BA2913F93200337D51 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		676B36BC2914C14C00337D51 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		676B36BE2914C54D00337D51 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		676B36C329174F1200337D51 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		676B36C529174F2100337D51 /* RegistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistView.swift; sourceTree = "<group>"; };
+		676B36C82917539F00337D51 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		67D5BDFC2911586800CD7AFC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		67D5BDFE29115F8A00CD7AFC /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
 		67EEB5B72901403000450770 /* CookRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +217,23 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		676B36C229174F0400337D51 /* Regist */ = {
+			isa = PBXGroup;
+			children = (
+				676B36C329174F1200337D51 /* RegistViewController.swift */,
+				676B36C529174F2100337D51 /* RegistView.swift */,
+			);
+			path = Regist;
+			sourceTree = "<group>";
+		};
+		676B36C7291752F700337D51 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				676B36C82917539F00337D51 /* CustomTextField.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		67EEB5AE2901403000450770 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +253,7 @@
 		67EEB5B92901403000450770 /* CookRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				676B36C7291752F700337D51 /* Utility */,
 				6742BDCC290D0AE700348276 /* Common */,
 				67EEB5E22901958000450770 /* Model */,
 				67EEB5DB29015A5A00450770 /* API */,
@@ -263,6 +287,7 @@
 		67EEB5D02901429900450770 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				676B36C229174F0400337D51 /* Regist */,
 				676B36B92913F8F800337D51 /* Profile */,
 				676B3695291297A500337D51 /* Login */,
 				676B369029128E8100337D51 /* Begin */,
@@ -399,6 +424,7 @@
 				676B36992912A53400337D51 /* LoginView.swift in Sources */,
 				6742BDF3290EDBE500348276 /* ReuesableProtocol.swift in Sources */,
 				6742BDE7290EBC2B00348276 /* CookInfoCollectionViewCell.swift in Sources */,
+				676B36C92917539F00337D51 /* CustomTextField.swift in Sources */,
 				676B36A7291307E700337D51 /* APIService.swift in Sources */,
 				6742BDDB290E889D00348276 /* DetailViewModel.swift in Sources */,
 				67D5BDFF29115F8A00CD7AFC /* Alert+.swift in Sources */,
@@ -409,6 +435,7 @@
 				676B369429128F7A00337D51 /* BeginView.swift in Sources */,
 				6742BDF0290EDB3400348276 /* CookIngredientTableViewCell.swift in Sources */,
 				6742BDDD290E8AD100348276 /* SectionCookInfo.swift in Sources */,
+				676B36C429174F1200337D51 /* RegistViewController.swift in Sources */,
 				6742BDD9290D71F400348276 /* Transition+.swift in Sources */,
 				67EEB5D2290142B500450770 /* MainViewController.swift in Sources */,
 				6742BE02290F82BE00348276 /* DetailTableViewSection.swift in Sources */,
@@ -425,6 +452,7 @@
 				67EEB5BD2901403000450770 /* SceneDelegate.swift in Sources */,
 				67EEB5DD29015A6B00450770 /* APIKey.swift in Sources */,
 				676B36BD2914C14C00337D51 /* ProfileView.swift in Sources */,
+				676B36C629174F2100337D51 /* RegistView.swift in Sources */,
 				6742BDC8290BED2300348276 /* MainCollectionViewCell.swift in Sources */,
 				67EEB5EA2901A74800450770 /* MainViewModel.swift in Sources */,
 				67EEB5E129018E0200450770 /* APIError.swift in Sources */,
