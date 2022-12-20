@@ -42,6 +42,7 @@ extension RegistViewController {
     private func delegateConfigure() {
         registView.idTextField.delegate = self
         registView.pwTextField.delegate = self
+        registView.nameTextField.delegate = self
     }
     
     private func gestureConfigure() {

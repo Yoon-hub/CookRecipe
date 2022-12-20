@@ -21,9 +21,11 @@ final class APIService {
             case .success(let data):
                 completion(.success(data), response.response!.statusCode)
             case .failure(let error):
+                print(error )
                 completion(.failure(error), response.response!.statusCode)
             }
         }
     }
     
 }
+

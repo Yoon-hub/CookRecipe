@@ -122,6 +122,12 @@ extension MainViewController {
     
     @objc
     private func profileButton() {
+        guard let a =  UserDefaults.standard.string(forKey: "token") else {
+            print("사용이 불가능합니다.")
+            let alert = showAlert(message: "비회원 사용자는 사용이 불가능합니다.")
+            present(alert, animated: true)
+            return
+        }
         let vc = ProfileViewController()
         transition(vc, transitionStyle: .navigation)
     }

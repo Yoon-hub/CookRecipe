@@ -19,7 +19,7 @@ final class DetailViewController: UIViewController {
     private let viewModel = DetailViewModel()
     
     private let disposeBag = DisposeBag()
-    
+        
     var dic: [String:String]?
     
     private var input: DetailViewModel.Input!

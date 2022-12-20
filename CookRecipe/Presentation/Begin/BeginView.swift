@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import Then
 
 final class BeginView: UIView {
     
@@ -38,6 +39,13 @@ final class BeginView: UIView {
         return view
     }()
     
+    let passButton = UIButton().then{
+        $0.setTitle("비회원으로 사용", for: .normal)
+        $0.tintColor = .black
+        $0.backgroundColor = UIColor(named: "buttonColor")
+        $0.layer.cornerRadius = 8
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -51,7 +59,7 @@ final class BeginView: UIView {
     
     private func configure() {
         self.backgroundColor = .white
-        [mainLabel, loginButton, registButton].forEach { self.addSubview($0) }
+        [mainLabel, loginButton, registButton, passButton].forEach { self.addSubview($0) }
     }
     
     private func setConstraints() {
@@ -72,6 +80,12 @@ final class BeginView: UIView {
             $0.trailing.equalTo(self.safeAreaLayoutGuide).offset(-20)
             $0.width.equalTo(loginButton.snp.width)
             $0.height.equalTo(37)
+        }
+        
+        passButton.snp.makeConstraints {
+            $0.height.equalTo(37)
+            $0.horizontalEdges.equalTo(self).inset(20)
+            $0.bottom.equalTo(registButton.snp.top).offset(-16)
         }
     }
     

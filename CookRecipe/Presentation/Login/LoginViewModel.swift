@@ -23,6 +23,7 @@ final class LoginViewModel {
                 UserDefaults.standard.set(data.token, forKey: "token")
                 completion(.success(data))
             case .failure(let error):
+                print(error)
                 completion(.failure(error))
             }
         }
